@@ -37,9 +37,9 @@ class LinkedList:
             temp.next = new_node
 
     def insert_middle(self, value, position):
-        if position < 0 or position > self.get_length():
+        if position <= 0 or position > self.get_length():
             raise Exception("Invalid Position")
-        if position == 0:
+        elif position == 1:
             self.insert_beginning(value)
         else:
             count = 0
@@ -86,9 +86,9 @@ class LinkedList:
         del temp
 
     def remove_middle(self,position):
-        if position < 0 or position > self.get_length():
+        if position <= 0 or position > self.get_length():
             raise Exception("Invalid Position")
-        elif position == 0:
+        elif position == 1:
             self.remove_beginning()
         elif position == self.get_length():
             self.remove_end()
@@ -116,7 +116,7 @@ if __name__ == '__main__':
     link_list.display()
     link_list.insert_middle(50,2)
     link_list.display()
-    link_list.insert_middle(60,0)
+    link_list.insert_middle(60,1)
     link_list.display()
     link_list.insert_middle(70, 6)
     link_list.display()
@@ -126,4 +126,6 @@ if __name__ == '__main__':
     link_list.remove_beginning()
     link_list.display()
     link_list.remove_end()
+    link_list.display()
+    link_list.remove_middle(link_list.get_length())
     link_list.display()
