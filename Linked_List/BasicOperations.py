@@ -106,6 +106,14 @@ class LinkedList:
     def delete(self):
         self.head = None
 
+    def insert_values(self,data_list):
+        for value in data_list:
+            if self.head is None:
+                new_node = Node(value)
+                self.head = new_node
+            else:
+                self.insert_end(value)
+
 
 if __name__ == '__main__':
     link_list = LinkedList()
@@ -129,3 +137,6 @@ if __name__ == '__main__':
     link_list.display()
     link_list.remove_middle(link_list.get_length())
     link_list.display()
+    link2 = LinkedList()
+    link2.insert_values([1,7,8,9,10])
+    link2.display()
