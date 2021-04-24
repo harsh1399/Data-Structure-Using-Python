@@ -3,6 +3,9 @@ class Node:
         self.data = value
         self.next = None
 
+    def __eq__(self, other):
+        if self.data == other.data and self.next == other.next:
+            return True
 
 class LinkedList:
     def __init__(self):
